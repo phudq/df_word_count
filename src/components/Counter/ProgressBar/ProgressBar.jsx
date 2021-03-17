@@ -9,7 +9,8 @@ const ProgressBar = props => {
   const {
     size,
     progress,
-    circleTwoStroke,
+    colorCircleStroke,
+    text
   } = props;
 
   const strokeWidth = 2;
@@ -21,7 +22,7 @@ const ProgressBar = props => {
   useEffect(() => {
     const progressOffset = ((100 - progress) / 100) * circumference;
     setOffset(progressOffset);
-    circleRef.current.style = 'transition: stroke-dashoffset 850ms ease-in-out';
+    circleRef.current.style = 'transition: stroke-dashoffset 150ms ease-in-out';
   }, [setOffset, progress, circumference, offset]);
 
   return (
@@ -42,7 +43,7 @@ const ProgressBar = props => {
         <circle
           className="svg-circle"
           ref={circleRef}
-          stroke={circleTwoStroke}
+          stroke={colorCircleStroke}
           cx={center}
           cy={center}
           r={radius}
@@ -50,13 +51,16 @@ const ProgressBar = props => {
           strokeDasharray={circumference}
           strokeDashoffset={offset}
         />
-        <text
-          x="50%" y="50%"
-          dominantBaseline="middle"
-          textAnchor="middle"
-          className="svg-circle-text">
-          {progress}
-        </text>
+        {
+          !isNaN(text) &&
+          <text
+            x="50%" y="50%"
+            dominantBaseline="middle"
+            textAnchor="middle"
+            className="svg-circle-text">
+            {text}
+          </text>
+        }
       </svg>
     </>
   );

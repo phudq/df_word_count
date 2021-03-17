@@ -5,4 +5,13 @@
     display: flex;
     justify-content: flex-end;
   }
+
+  .editor {
+    padding: 10px;
+    border-bottom: 1px solid;
+  }
+
+  .content-overflow {
+    background-color: #FD9BB0;
+  }
 }
