@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/df_word_count/static/css/main.88459381.chunk.css",
+    "main.js": "/df_word_count/static/js/main.4ac61a2a.chunk.js",
+    "main.js.map": "/df_word_count/static/js/main.4ac61a2a.chunk.js.map",
+    "runtime-main.js": "/df_word_count/static/js/runtime-main.c4c3c877.js",
+    "runtime-main.js.map": "/df_word_count/static/js/runtime-main.c4c3c877.js.map",
+    "static/css/2.e426f036.chunk.css": "/df_word_count/static/css/2.e426f036.chunk.css",
+    "static/js/2.ee59459d.chunk.js": "/df_word_count/static/js/2.ee59459d.chunk.js",
+    "static/js/2.ee59459d.chunk.js.map": "/df_word_count/static/js/2.ee59459d.chunk.js.map",
+    "static/js/3.6822ebba.chunk.js": "/df_word_count/static/js/3.6822ebba.chunk.js",
+    "static/js/3.6822ebba.chunk.js.map": "/df_word_count/static/js/3.6822ebba.chunk.js.map",
+    "index.html": "/df_word_count/index.html",
+    "static/css/2.e426f036.chunk.css.map": "/df_word_count/static/css/2.e426f036.chunk.css.map",
+    "static/css/main.88459381.chunk.css.map": "/df_word_count/static/css/main.88459381.chunk.css.map",
+    "static/js/2.ee59459d.chunk.js.LICENSE.txt": "/df_word_count/static/js/2.ee59459d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c4c3c877.js",
+    "static/css/2.e426f036.chunk.css",
+    "static/js/2.ee59459d.chunk.js",
+    "static/css/main.88459381.chunk.css",
+    "static/js/main.4ac61a2a.chunk.js"
+  ]
+}
