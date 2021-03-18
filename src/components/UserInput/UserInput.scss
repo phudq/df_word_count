@@ -1,15 +1,35 @@
 .user-input {
-  border: 1px solid;
+  border-top: 1px solid rgb(235, 238, 240);
+  padding: 0 24px;
+
+  .editor {
+    padding: 10px;
+  }
 
   .action {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    padding: 12px;
+    border-top: 1px solid rgb(235, 238, 240);
   }
 
-  .editor {
-    padding: 10px;
-    border-bottom: 1px solid;
+  .reply-btn {
+    outline: none;
+    border: none;
+    color: #ffffff;
+    background-color: rgb(29, 161, 242);
+    padding: 6px 12px;
+    border-radius: 14px;
+    margin-left: 8px;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: auto;
+    }
   }
+
 
   .content-overflow {
     background-color: #FD9BB0;

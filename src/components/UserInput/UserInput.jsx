@@ -1,6 +1,5 @@
-import React, {useState, useRef} from 'react'
-import ProcessBar from "../Counter/ProgressBar";
-import {Editor, EditorState, CompositeDecorator} from 'draft-js';
+import React, {useState} from 'react'
+import {Editor, EditorState, CompositeDecorator, ContentState} from 'draft-js';
 import 'draft-js/dist/Draft.css';
 
 import './UserInput.scss'
@@ -10,7 +9,7 @@ const maxCount = 50;
 
 const Overflow = (props) => {
   return (
-    <span {...props} className="content-overflow">
+    <span className="content-overflow">
       {props.children}
     </span>
   );
@@ -43,13 +42,21 @@ function handleOverflow(contentBlock, callback, contentState) {
   }
 }
 
-function UserInput() {
+function UserInput({sendMessage}) {
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty(compositeDecorator),
   );
   const [count, setCount] = useState(0);
 
-  const onChange = (editorState) => {
+  const handleSendMessage = () => {
+    const content = editorState.getCurrentContent().getPlainText()
+    sendMessage(content)
+    const newEditorState = EditorState.push(editorState, ContentState.createFromText(''));
+    setEditorState(newEditorState);
+    setCount(0)
+  }
+
+  const onEditorChange = (editorState) => {
     setEditorState(editorState);
     const plainText = editorState.getCurrentContent().getPlainText();
     const contentLength = plainText.replace(/\n/g, '').length;
@@ -60,13 +67,18 @@ function UserInput() {
     <div className="editor">
       <Editor
         editorState={editorState}
-        onChange={onChange}
+        onChange={onEditorChange}
         placeholder="Write a tweet..."
       />
     </div>
     <div className="action">
       <Counter count={count} maxCount={maxCount}/>
-      <button className="reply">Reply</button>
+      <button
+        onClick={handleSendMessage}
+        className="reply-btn"
+        disabled={count > maxCount}
+      >Reply
+      </button>
     </div>
   </div>
 }

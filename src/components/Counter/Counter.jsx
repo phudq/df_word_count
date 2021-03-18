@@ -1,5 +1,4 @@
 import React, {useMemo} from 'react'
-import ProgressBar from "./ProgressBar";
 import ProcessBar from "./ProgressBar/ProgressBar";
 
 function Counter({count, maxCount = 50}) {
@@ -16,8 +15,7 @@ function Counter({count, maxCount = 50}) {
       return 'red';
     }
     return '#7ea9e1'
-  }, [count, maxCount]);
-  console.log(colorCircleStroke)
+  }, [count]);
 
   return <div>
     <ProcessBar

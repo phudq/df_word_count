@@ -70,8 +70,7 @@ ProgressBar.propTypes = {
   size: PropTypes.number.isRequired,
   progress: PropTypes.number.isRequired,
   strokeWidth: PropTypes.number.isRequired,
-  circleOneStroke: PropTypes.string.isRequired,
-  circleTwoStroke: PropTypes.string.isRequired
+  colorCircleStroke: PropTypes.string.isRequired
 }
 
 export default ProgressBar;

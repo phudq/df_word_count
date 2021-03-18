@@ -5,10 +5,15 @@ import UserInput from "../UserInput/UserInput";
 import './ChatBox.scss'
 
 function ChatBox() {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([
+    {
+      isComing: true,
+      content: 'Hi'
+    }
+  ]);
 
-  const sendMessage = ({content}) => {
-    setMessages([...messages, {content}])
+  const sendMessage = (content) => {
+    setMessages([...messages, {content, isComing: false}])
   }
 
   return <div className="chat-box">
